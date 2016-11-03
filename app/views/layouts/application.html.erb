@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Haha</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>SysengCitationManager</title>
+  <%= stylesheet_link_tag    'application', media: 'all'%>
+  <%= stylesheet_link_tag controller_name if asset_path(controller_name) %>
+  <%= csrf_meta_tags %>
+  <%= yield :header %>
+</head>
+<body>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+	<p>Let's be nice</p>
+	
+	<%= yield %>
+	
+	<%= javascript_include_tag 'application' %>
+	<%= yield :footer %>
+	
+</body>
 </html>
